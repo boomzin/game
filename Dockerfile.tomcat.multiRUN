@@ -1,0 +1,12 @@
+FROM tomcat:9.0.46-jdk8
+
+RUN apt-get update
+RUN apt-get install -y maven
+RUN apt-get install -y git
+RUN cd ~/
+RUN git clone https://github.com/boomzin/game.git
+RUN cd ~/game
+RUN mvn -DskipTests=true clean package
+RUN cp ~/game/target/rpg-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/rpgadminpanel.war
+
+EXPOSE 8080
