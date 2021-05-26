@@ -10,3 +10,4 @@ RUN mvn -DskipTests=true clean package
 RUN cp ~/game/target/rpg-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/rpgadminpanel.war
 
 EXPOSE 8080
+EXPOSE 3306
