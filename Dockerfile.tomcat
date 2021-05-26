@@ -7,7 +7,7 @@ RUN apt-get update \
     && git clone https://github.com/boomzin/game.git \
     && cd ~/game \
     && mvn -DskipTests=true clean package \
-    && cp ~/game/target/rpg-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/rpgadminpanel.war
+    && cp ~/game/target/rpg-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/rpgadminpanel.war \
     && rm -rf /var/lib/apt/lists/*
 
 EXPOSE 8080
