@@ -1,0 +1,9 @@
+FROM nginx
+
+RUN apt-get update \
+    && apt-get install -y git \
+    && git clone https://github.com/boomzin/game.git \
+    && cp /game/default.conf /etc/nginx/conf.d/default.conf \
+    && rm -rf /var/lib/apt/lists/*
+
+EXPOSE 80
